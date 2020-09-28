@@ -1,22 +1,27 @@
-var c = document.createElement("canvas");
-var ctx = c.getContext("2d");
-c.width = 500;
-c.height = 350;
-document.body.appendChild(c);
-
-
-
-
-
-function loop(){
-  ctx.fillStyle |
-  ctx.fillRect(0,0,c.width, c.height);
-  requestAnimationFrame(loop);
+var character =
+document.getElementById("character");
+var block = document.getElementById("block");
+function jump (){
+  if(character.classList != "animate"){
+    character.classList.add("animate");
+  }
+  setTimeout(function(){
+    character.classList.remove("animate");
+  },500);
 
 }
 
-loop();
+var checkDEAD =setInterval(function(){
+   var character Top =
+  parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+  var blockLeft=
+  parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+  if (blockLeft<20 && blockLeft>0 %%
+    characterTop>=130){
+      block.style.animation = "none"
+      block.style.display = "none"
+      alert("u lose");
 
-
-
+  }
+},10);
 
